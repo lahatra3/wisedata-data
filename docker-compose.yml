@@ -1,0 +1,22 @@
+services:
+  wisedatadb:
+    image: bitnami/postgresql:latest
+    container_name: wisedatadb
+    environment:
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+      POSTGRESQL_ENABLE_TLS: ${POSTGRESQL_ENABLE_TLS}
+      POSTGRESQL_TLS_CERT_FILE: ${POSTGRESQL_TLS_CERT_FILE}
+      POSTGRESQL_TLS_KEY_FILE: ${POSTGRESQL_TLS_KEY_FILE}
+      POSTGRESQL_TLS_CA_FILE: ${POSTGRESQL_TLS_CA_FILE}
+    volumes:
+      - ./data:/bitnami/postgresql
+    ports:
+      - "5432:5432"
+    networks:
+      - wisedata_network
+
+networks:
+  wisedata_network:
+    
