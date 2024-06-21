@@ -2,6 +2,7 @@ services:
   wisedatadb:
     image: bitnami/postgresql:latest
     container_name: wisedatadb
+    user: 1001
     environment:
       POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
       POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
