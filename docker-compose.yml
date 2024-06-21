@@ -10,7 +10,7 @@ services:
       POSTGRESQL_TLS_CERT_FILE: ${POSTGRESQL_TLS_CERT_FILE}
       POSTGRESQL_TLS_KEY_FILE: ${POSTGRESQL_TLS_KEY_FILE}
     volumes:
-      - ./data:/bitnami/postgresql
+      - ./bitnami/postgresql:/bitnami/postgresql
       - ./certificates/server.crt:/app/certificates/server.crt
       - ./certificates/server.key:/app/certificates/server.key
     ports:
